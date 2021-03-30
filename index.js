@@ -5,6 +5,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(express.static('build'))
+
 const generateId = () => {
   const maxId = notes.length > 0 ? Math.max(...notes.map((n) => n.id)) : 0;
   return maxId + 1;
